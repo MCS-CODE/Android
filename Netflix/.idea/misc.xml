@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_not_listed_location_24.xml" value="0.17685185185185184" />
+        <entry key="app/src/main/res/drawable/ic_pause.xml" value="0.17685185185185184" />
+        <entry key="app/src/main/res/drawable/ic_play.xml" value="0.17685185185185184" />
+        <entry key="app/src/main/res/drawable/ic_restaurar_24.xml" value="0.17685185185185184" />
+        <entry key="app/src/main/res/drawable/seta_baixo.xml" value="0.17685185185185184" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.43502432244614314" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

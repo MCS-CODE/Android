@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Frases do Dia</string>
+    <string name="btn_gera_frases">Frase</string>
+    <string name="txt_frase">Jesus te Ama :)</string>
+    <string name="desc_logo">logo</string>
+</resources>

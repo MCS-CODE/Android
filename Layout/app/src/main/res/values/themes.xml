@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Layout" parent="Theme.AppCompat.Light">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#3D982C</item>
+        <item name="colorPrimaryDark">#134210</item>
+        <item name="colorAccent">@color/purple_500</item>
+        <item name="android:textColor">@color/cor_texto</item>
+        <item name="android:textColorPrimary">@color/purple_500</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Caixinha de Promessas</string>
+    <string name="label_promessa">Jesus te Ama :)</string>
+    <string name="btn_label">Promessas</string>
+    <string name="img_logo">logotipo</string>
+    <string name="img_funfo">imagem de fundo</string>
+</resources>

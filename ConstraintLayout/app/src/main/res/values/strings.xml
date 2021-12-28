@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Constraint Layout</string>
+    <string name="btn_anterior">Anterior</string>
+    <string name="btn_proximo">Próximo</string>
+</resources>
