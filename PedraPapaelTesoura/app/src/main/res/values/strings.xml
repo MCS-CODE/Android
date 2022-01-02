@@ -3,4 +3,7 @@
     <string name="txt_label">Escolha do app</string>
     <string name="txt_resultado">Escolha!!!</string>
     <string name="txt_descricao">Ok vamos jogar :)</string>
+    <string name="txt_pedra">Pedra</string>
+    <string name="txt_papel">Papel</string>
+    <string name="txt_tesoura">Tesoura</string>
 </resources>

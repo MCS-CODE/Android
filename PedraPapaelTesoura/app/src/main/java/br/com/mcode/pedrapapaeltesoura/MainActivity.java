@@ -1,6 +1,5 @@
 package br.com.mcode.pedrapapaeltesoura;
 
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +10,6 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    boolean ativar = true;
 
 
     @Override
@@ -24,16 +22,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void selecionarPedra(View view){
         opcaoSelecionada("pedra");
+        mudarCorTextoDescricao("pedra");
+
 
     }
 
     public void selecionarPapel(View view){
         opcaoSelecionada("papel");
+        mudarCorTextoDescricao("papel");
 
     }
 
     public void selecionarTesoura(View view){
         opcaoSelecionada("tesoura");
+        mudarCorTextoDescricao("tesoura");
 
     }
 
@@ -86,5 +88,34 @@ public class MainActivity extends AppCompatActivity {
             textView.setText("Escolha uma opção!!!");
             textDescricao.setText("Escolhemos o mesmo item...");
         }
+    }
+
+    public void mudarCorTextoDescricao(String opcao){
+        TextView txtWhitePedra = findViewById(R.id.text_name_pedra);
+        TextView txtWhitePapel = findViewById(R.id.text_name_papel);
+        TextView txtWhiteTesoura = findViewById(R.id.text_name_tesoura);
+
+        int colorTextDescricao = getResources().getColor(R.color.txt_PPT_green);
+        int colorTextDescricaoNeutra = getResources().getColor(R.color.txt_PPT);
+
+        switch (opcao){
+            case "pedra":
+                txtWhitePedra.setTextColor(colorTextDescricao);
+                txtWhitePapel.setTextColor(colorTextDescricaoNeutra);
+                txtWhiteTesoura.setTextColor(colorTextDescricaoNeutra);
+                break;
+            case "papel":
+                txtWhitePapel.setTextColor(colorTextDescricao);
+                txtWhitePedra.setTextColor(colorTextDescricaoNeutra);
+                txtWhiteTesoura.setTextColor(colorTextDescricaoNeutra);
+                break;
+            case "tesoura":
+                txtWhiteTesoura.setTextColor(colorTextDescricao);
+                txtWhitePapel.setTextColor(colorTextDescricaoNeutra);
+                txtWhitePedra.setTextColor(colorTextDescricaoNeutra);
+                break;
+        }
+
+
     }
 }
