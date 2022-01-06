@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
     public void selecionarPedra(View view){
         opcaoSelecionada("pedra");
         mudarCorTextoDescricao("pedra");
-
-
     }
 
     public void selecionarPapel(View view){
@@ -43,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.txt_escolha);
         TextView textDescricao = findViewById(R.id.txt_descrição);
+
+        TextView scoreAndroid = findViewById(R.id.text_score_android);
+        TextView scoreJogador = findViewById(R.id.text_score_jogador);
+
 
         int posicao = new Random().nextInt(3);
 
@@ -115,7 +117,5 @@ public class MainActivity extends AppCompatActivity {
                 txtWhitePedra.setTextColor(colorTextDescricaoNeutra);
                 break;
         }
-
-
     }
 }

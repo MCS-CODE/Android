@@ -145,7 +145,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_label" />
 
     <TextView
-        android:id="@+id/tex_score_jogador"
+        android:id="@+id/text_score_jogador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
