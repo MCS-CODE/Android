@@ -3,13 +3,13 @@ package br.com.mcode.pedrapapaeltesoura;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
 
 
     @Override
@@ -23,11 +23,13 @@ public class MainActivity extends AppCompatActivity {
     public void selecionarPedra(View view){
         opcaoSelecionada("pedra");
         mudarCorTextoDescricao("pedra");
+
     }
 
     public void selecionarPapel(View view){
         opcaoSelecionada("papel");
         mudarCorTextoDescricao("papel");
+
 
     }
 
@@ -35,15 +37,17 @@ public class MainActivity extends AppCompatActivity {
         opcaoSelecionada("tesoura");
         mudarCorTextoDescricao("tesoura");
 
+
     }
 
     public void opcaoSelecionada(String op){
 
+        int ponto = 1;
+
+        TextView scoreAndroid = findViewById(R.id.text_score_android);//score
+
         TextView textView = findViewById(R.id.txt_escolha);
         TextView textDescricao = findViewById(R.id.txt_descrição);
-
-        TextView scoreAndroid = findViewById(R.id.text_score_android);
-        TextView scoreJogador = findViewById(R.id.text_score_jogador);
 
 
         int posicao = new Random().nextInt(3);
@@ -68,29 +72,31 @@ public class MainActivity extends AppCompatActivity {
                 img.setImageResource(R.drawable.padrao);
         }
 
-        if (op == "pedra" && opApp == "papel"){
-            textView.setText("Você PERDEU :(");
-            textDescricao.setText("O papel embrulha a pedra.");
-        }else if(op == "papel" && opApp == "pedra"){
-            textView.setText("Você GANHOU :)");
-            textDescricao.setText("O papel embrula a pedra.");
-        }else if(op == "papel" && opApp == "tesoura"){
-            textView.setText("Você PERDEU :(");
-            textDescricao.setText("A tesoura corta o papel.");
-        }else if (op == "tesoura" && opApp == "papel"){
-            textView.setText("Você GANHOU :)");
-            textDescricao.setText("A tesoura corta o papel.");
-        }else if (op == "pedra" && opApp == "tesoura"){
-            textView.setText("Você GANHOU :)");
-            textDescricao.setText("A pedra amassa a tesoura.");
-        }else if (op == "tesoura" && opApp == "pedra"){
-            textView.setText("Você PERDEU :(");
-            textDescricao.setText("A pedra amassa a tesoura.");
-        }else {
-            textView.setText("Escolha uma opção!!!");
-            textDescricao.setText("Escolhemos o mesmo item...");
+            if (op == "pedra" && opApp == "papel"){
+                textView.setText("Você PERDEU :(");
+                textDescricao.setText("O papel embrulha a pedra.");
+                scoreAndroid.setText(""+ponto);
+            }else if(op == "papel" && opApp == "pedra"){
+                textView.setText("Você GANHOU :)");
+                textDescricao.setText("O papel embrula a pedra.");
+            }else if(op == "papel" && opApp == "tesoura"){
+                textView.setText("Você PERDEU :(");
+                textDescricao.setText("A tesoura corta o papel.");
+            }else if (op == "tesoura" && opApp == "papel"){
+                textView.setText("Você GANHOU :)");
+                textDescricao.setText("A tesoura corta o papel.");
+            }else if (op == "pedra" && opApp == "tesoura"){
+                textView.setText("Você GANHOU :)");
+                textDescricao.setText("A pedra amassa a tesoura.");
+            }else if (op == "tesoura" && opApp == "pedra"){
+                textView.setText("Você PERDEU :(");
+                textDescricao.setText("A pedra amassa a tesoura.");
+            }else {
+                textView.setText("Escolha uma opção!!!");
+                textDescricao.setText("Escolhemos o mesmo item...");
+            }
+
         }
-    }
 
     public void mudarCorTextoDescricao(String opcao){
         TextView txtWhitePedra = findViewById(R.id.text_name_pedra);
