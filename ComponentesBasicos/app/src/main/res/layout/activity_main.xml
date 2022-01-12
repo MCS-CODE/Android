@@ -35,6 +35,24 @@
                 android:layout_height="wrap_content" />
         </android.support.design.widget.TextInputLayout>
 
+        <CheckBox
+            android:id="@+id/checkbox_verde"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verde" />
+
+        <CheckBox
+            android:id="@+id/checkbox_branco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Branco" />
+
+        <CheckBox
+            android:id="@+id/checkbox_vermelho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vermelha" />
+
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
