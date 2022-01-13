@@ -55,11 +55,13 @@ public class MainActivity extends AppCompatActivity {
         String texto = "";
 
         if (checkbranco.isChecked()){
-            texto = "branco selecionado -> ";
+            String corSelecionada = checkbranco.getText().toString();
+            texto = corSelecionada;
             textResultado.setText(texto);
         }
         if (checkverde.isChecked()){
-            texto = texto + "verde selecionado -> ";
+            String corSelecionada = checkverde.getText().toString();
+            texto = texto +" " +  corSelecionada;
             textResultado.setText(texto);
         }
         if (checkvermelho.isChecked()){
