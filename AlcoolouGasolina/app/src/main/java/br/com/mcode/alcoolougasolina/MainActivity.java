@@ -29,9 +29,32 @@ public class MainActivity extends AppCompatActivity {
         String preco_gasolina = precoGasolina.getText().toString();
 
         //Validar campos
+        boolean camposValidos = validarCanpos(preco_alcool, preco_gasolina);
 
+        if (camposValidos){
+            //Converter string para números
+            Double valorAlcool = Double.parseDouble(preco_alcool);
+            Double valorGaslina = Double.parseDouble(preco_gasolina);
 
+            Double resultado = valorAlcool / valorGaslina;
+            if (resultado >= 0.7){
+                textResultado.setText("Melhor utilizar gasolina ;)");
+            }else {
+                textResultado.setText("Melhor utilizar alcool ;)");
+            }
+
+        }
     }
 
+    public boolean validarCanpos(String pAlcool, String pGasolina){
 
+        boolean camposValidos = true;
+
+        if (pAlcool == null || pAlcool.equalsIgnoreCase("")){
+            camposValidos  = false;
+        } else if (pGasolina == null || pGasolina.equalsIgnoreCase("")){
+            camposValidos = false;
+        }
+        return camposValidos;
+    }
 }
