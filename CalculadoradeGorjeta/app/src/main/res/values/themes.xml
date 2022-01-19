@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CalculadoraDeGorjeta" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#FFA840</item>
+        <item name="colorPrimaryDark">#EA8D28</item>
+        <item name="colorAccent">#EF6C00</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
