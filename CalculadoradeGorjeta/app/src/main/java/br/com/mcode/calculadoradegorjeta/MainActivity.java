@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         String valor = editValor.getText().toString();
         if(valor == null || valor.equalsIgnoreCase("")){
-            
+
             Toast.makeText(getApplicationContext(),
                     "Porvafor digite o valor da conta!",
                     Toast.LENGTH_SHORT).show();
