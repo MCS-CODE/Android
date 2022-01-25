@@ -5,12 +5,16 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.mcode.recyclerview.R;
+import br.com.mcode.recyclerview.activity.RecyclerItemClickListener;
 import br.com.mcode.recyclerview.activity.adapter.Adapter;
 import br.com.mcode.recyclerview.activity.model.Filme;
 
@@ -39,6 +43,37 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);//tamanho fixo
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
         recyclerView.setAdapter(adapter);
+
+        //evento de Click
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(
+                        getApplicationContext(),
+                        recyclerView,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                Toast.makeText(getApplicationContext(),
+                                        "Item pressionado",
+                                        Toast.LENGTH_SHORT
+                                ).show();
+                            }
+
+                            @Override
+                            public void onLongItemlick(View view, int position) {
+                                Toast.makeText(getApplicationContext(),
+                                        "Click longo",
+                                        Toast.LENGTH_SHORT
+                                ).show();
+
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                            }
+                        }
+                )
+        );
     }
 
     public void criarFilmes(){
