@@ -52,16 +52,18 @@ public class MainActivity extends AppCompatActivity {
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
+                                Filme filme = listaFilmes.get(position);
                                 Toast.makeText(getApplicationContext(),
-                                        "Item pressionado",
+                                        filme.getTitulo(),
                                         Toast.LENGTH_SHORT
                                 ).show();
                             }
 
                             @Override
                             public void onLongItemlick(View view, int position) {
+                                Filme filme = listaFilmes.get(position);
                                 Toast.makeText(getApplicationContext(),
-                                        "Click longo",
+                                        filme.getTitulo() + " click long",
                                         Toast.LENGTH_SHORT
                                 ).show();
 
