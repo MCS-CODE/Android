@@ -7,6 +7,7 @@ import android.widget.TextView;
 public class SegundaActivity extends AppCompatActivity {
     private TextView textNome, textIdade;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +21,15 @@ public class SegundaActivity extends AppCompatActivity {
         String nome = dados.getString("nome");
         int idade = dados.getInt("idade");
 
-        //passando dados para interface
-        textNome.setText(nome);
-        textIdade.setText(String.valueOf(idade));
+        //recuperando dados de um objeto
+        Usuario usuario = (Usuario) dados.getSerializable("objeto");
+
+        //passando dados do objeto para view
+        textNome.setText(usuario.getNome());
+        textIdade.setText(usuario.getEmail());
+
+        //passando dados para view
+        //textNome.setText(nome);
+        //textIdade.setText(String.valueOf(idade));
     }
 }
