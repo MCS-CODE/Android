@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CaraOuCoroa" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/app_fundo</item>
+        <item name="colorAccent">@color/app_fundo</item>
+        <item name="android:colorBackground">@color/app_fundo</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
