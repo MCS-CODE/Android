@@ -4,8 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.support.design.widget.Snackbar;
 
-import com.google.android.material.snackbar.Snackbar;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 snackbar = Snackbar.make(
                         view,
                         "Botão snackbar",
-                        Snackbar.LENGTH_SHORT
+                        Snackbar.LENGTH_LONG
                 ).setAction("confirmar", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
                 snackbar.show();
                 //Fechar snackbar
-                snackbar.dismiss();
+                //snackbar.dismiss();
             }
         });
 
