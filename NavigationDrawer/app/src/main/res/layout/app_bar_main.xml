@@ -9,14 +9,14 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.FloatActionButton.AppBarOverlay">
+        android:theme="@style/Theme.NavigationDrawer.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.FloatActionButton.PopupOverlay" />
+            app:popupTheme="@style/Theme.NavigationDrawer.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -29,9 +29,6 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
-        android:contentDescription="@string/fab_descricao"
-        app:backgroundTint="#E60B0B"
-        app:srcCompat="@android:drawable/ic_dialog_map"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </android.support.design.widget.CoordinatorLayout>
