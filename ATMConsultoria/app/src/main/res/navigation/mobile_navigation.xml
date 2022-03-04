@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_principal">
+
+    <fragment
+        android:id="@+id/nav_principal"
+        android:name="br.com.mcode.atmconsultoria.ui.principal.PrincipalFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_principal" />
+
+    <fragment
+        android:id="@+id/nav_servicos"
+        android:name="br.com.mcode.atmconsultoria.ui.servicos.ServicosFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_servicos" />
+
+    <fragment
+        android:id="@+id/nav_clientes"
+        android:name="br.com.mcode.atmconsultoria.ui.clientes.ClientesFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_clientes" />
+
+    <fragment
+        android:id="@+id/nav_email"
+        android:name="br.com.mcode.atmconsultoria.ui.contato.EmailFragment"
+        android:label="@string/menu_email"
+        tools:layout="@layout/fragment_contato"/>
+
+    <fragment
+        android:id="@+id/nav_telefone"
+        android:name="br.com.mcode.atmconsultoria.ui.contato.TelefoneFragment"
+        android:label="@string/menu_phone"
+        tools:layout="@layout/fragment_telefone"/>
+</navigation>
