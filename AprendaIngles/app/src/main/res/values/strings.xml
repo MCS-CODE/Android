@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Vamos Aprender</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="animais_fragment">Animais</string>
+    <string name="numeros_fragment">Números</string>
+    <string name="vogais_fragment">Vogais</string>
+    <!-- Title abas -->
+    <string name="animais_title">Animais</string>
+    <string name="numeros_title">Números</string>
+    <string name="vogais_title">Vogais</string>
+
+</resources>
