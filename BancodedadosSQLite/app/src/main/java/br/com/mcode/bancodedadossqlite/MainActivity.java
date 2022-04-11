@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
 
             //Recuperar dados
-            //String consulta = "SELECT id, nome, idade FROM pessoas ";
-            String consulta = "SELECT * FROM pessoas ";
+            String consulta = "SELECT id, nome, idade FROM pessoas ";
+            //String consulta = "SELECT * FROM pessoas ";
             //String consulta = "SELECT nome, idade FROM pessoas WHERE nome = 'marcio' AND idade = 35";
             //String consulta = "SELECT nome, idade FROM pessoas WHERE idade >= 35 OR idade = 4";
             //String consulta = "SELECT nome, idade FROM pessoas WHERE nome IN('marcio', 'john')";
