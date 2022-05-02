@@ -5,32 +5,45 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
-
+import java.io.InputStream;
+import java.util.UUID;
 public class MainActivity extends AppCompatActivity {
     // Atributos para upload
     private ImageView imageFoto;
     private Button buttonUpload;
 
-    /*
+
     // Recuperando objeto DB
     private DatabaseReference mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
     // Recuperando objeto Auth
     private FirebaseAuth firebaseAuthUser = FirebaseAuth.getInstance();
-    */
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,13 +69,42 @@ public class MainActivity extends AppCompatActivity {
 
                 // Converte o baos para pixel brutos em uma matrix de bytes dados da imagem
                 byte[] dadosImagem = baos.toByteArray();
-
                 // Definindo nos para o storage
+
                 StorageReference storageReference = FirebaseStorage.getInstance().getReference();
                 StorageReference imagemFolder = storageReference.child("IMAGENS");
+                //Nome do arquivo
+
+                //String nomeArquivo = UUID.randomUUID().toString();
+                //final StorageReference imagemRef = imagemFolder.child( nomeArquivo + ".jpeg");
                 StorageReference imagemRef = imagemFolder.child("celular.jpeg");
 
-                // Retorna o objeto que irá controlar o upload
+                //Fazendo download de imagem que esta no Storage para uma imageview
+                Glide.with(MainActivity.this)
+                        .load(imagemRef)
+                        .into(imageFoto);
+
+
+
+                /*
+                // Deletando um arquivo
+                final StorageReference imagemRef = imagemFolder.child("8127c575-2d89-4fd6-a621-f4bf0844b981.jpeg");
+                imagemRef.delete().addOnFailureListener(MainActivity.this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(MainActivity.this, "Erro ao deletar a imagem " +  e.getMessage(),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnSuccessListener(MainActivity.this, new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(MainActivity.this, "Sucesso ao deletar a imagem ",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });*/
+
+
+                /*// Retorna o objeto que irá controlar o upload
                 UploadTask uploadTask = imagemRef.putBytes(dadosImagem);
                 uploadTask.addOnFailureListener(MainActivity.this, new OnFailureListener() {
                     @Override
@@ -74,16 +116,25 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
-                        // ...
-                        taskSnapshot.getMetadata();
-                        Toast.makeText(MainActivity.this, "Upload da imagem feito com sucesso ",
-                                Toast.LENGTH_SHORT).show();
+                        // Recuperando a url
+                        imagemRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Uri> task) {
+                               Uri url = task.getResult();
+                                Toast.makeText(MainActivity.this, "Upload da imagem feito com sucesso " + url.toString(),
+                                        Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
                     }
-                });
+                });//end upload
+
+                 */
+
 
 
             }
-        });
+        }); //End buttonUpload
 
 
         /*
@@ -177,8 +228,9 @@ public class MainActivity extends AppCompatActivity {
         // Deslogar usuario
         firebaseAuthUser.signOut();
         */
-        /*
-        // Logando usuario
+
+        /*// Logando usuario
+
         firebaseAuthUser.signInWithEmailAndPassword("mcode.microsfire@outlook.com", "mcs007700")
                 .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -189,8 +241,8 @@ public class MainActivity extends AppCompatActivity {
                             Log.i("LogandoUser", "User NÃO Logou");
                         }
                     }
-                });
-         */
+                });*/
+
 
         // Pegando usuario pelo id
 
@@ -245,4 +297,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // methold for download in imageview
+
+    public void loadWithGlide() {
+        // [START storage_load_with_glide]
+        // Reference to an image file in Cloud Storage
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+
+        // ImageView in your Activity
+        ImageView imageView = findViewById(R.id.image_foto);
+
+        // Download directly from StorageReference using Glide
+        // (See MyAppGlideModule for Loader registration)
+        Glide.with(this /* context */)
+                .load(storageReference)
+                .into(imageView);
+        // [END storage_load_with_glide]
+    }
+
 }
+
+
