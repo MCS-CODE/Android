@@ -26,6 +26,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    namespace 'br.com.mcode.organizze'
 }
 
 dependencies {
@@ -53,6 +54,6 @@ dependencies {
     //FirebaseDatabase
     implementation 'com.google.firebase:firebase-database'
 
-
-
+    //Material Intro
+    implementation 'com.heinrichreimersoftware:material-intro:master-SNAPSHOT'
 }

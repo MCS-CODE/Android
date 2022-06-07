@@ -1,11 +1,15 @@
 package br.com.mcode.slider;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
-import com.heinrichreimersoftware.materialintro.slide.SimpleSlide;
+
+import br.com.mcode.slider.activity.CadastrarActivity;
+import br.com.mcode.slider.activity.LoginActivity;
+
 
 public class MainActivity extends IntroActivity {
 
@@ -45,5 +49,15 @@ public class MainActivity extends IntroActivity {
                 .fragment(R.layout.intro_cadastro)
                 .build()
         );
+
+    }
+
+    public void btEntrar(View view){
+        startActivity(new Intent(this, LoginActivity.class));
+
+    }
+
+    public void btCadastrar(View view){
+        startActivity(new Intent(this, CadastrarActivity.class));
     }
 }
