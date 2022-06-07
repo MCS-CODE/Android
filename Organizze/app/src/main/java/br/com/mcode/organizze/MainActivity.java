@@ -5,9 +5,6 @@ package br.com.mcode.organizze;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
@@ -22,9 +19,36 @@ public class MainActivity extends IntroActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
 
+        setButtonBackVisible(false);
+        setButtonNextVisible(false);
+
+        addSlide(new FragmentSlide.Builder()
+                .fragment(R.layout.intro_one)
+                .background(android.R.color.white)
+                .build()
+        );
+
+        addSlide(new FragmentSlide.Builder()
+                .fragment(R.layout.intro_two)
+                .background(android.R.color.white)
+                .build()
+        );
+
+        addSlide(new FragmentSlide.Builder()
+                .fragment(R.layout.intro_tree)
+                .background(android.R.color.white)
+                .build()
+        );
+
+        addSlide(new FragmentSlide.Builder()
+                .fragment(R.layout.intro_four)
+                .background(android.R.color.white)
+                .build()
+        );
+
         addSlide(new FragmentSlide.Builder()
                 .fragment(R.layout.intro_cadastro)
-                .background(android.R.color.darker_gray)
+                .background(android.R.color.black)
                 .build()
         );
 
