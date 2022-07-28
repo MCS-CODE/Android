@@ -1,4 +1,4 @@
-package br.com.mcode.organizze;
+package br.com.mcode.organizze.activity;
 
 
 
@@ -9,6 +9,7 @@ import android.view.View;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 
+import br.com.mcode.organizze.R;
 import br.com.mcode.organizze.activity.CadastroActivity;
 import br.com.mcode.organizze.activity.LoginActivity;
 
