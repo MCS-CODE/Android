@@ -61,4 +61,7 @@ dependencies {
 
     //Material Intro
     implementation 'com.heinrichreimersoftware:material-intro:master-SNAPSHOT'
+
+    //FloatActionMenu
+    implementation 'com.github.clans:fab:1.6.4'
 }
