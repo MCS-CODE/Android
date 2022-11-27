@@ -16,10 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
-import br.com.mcode.organizze.PrincipalActivity;
 import br.com.mcode.organizze.R;
 import br.com.mcode.organizze.config.ConfigFirebase;
 import br.com.mcode.organizze.model.Usuario;

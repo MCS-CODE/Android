@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PrincipalActivity">
+    tools:context=".activity.PrincipalActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_principal" />
+    <include layout="@layout/content_principal"/>
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menu"
@@ -35,13 +35,13 @@
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_despesa"
-            android:onClick="adicionarDespesas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/coloPrimaryDespesas"
+            android:onClick="adicionarDespesa"
             android:src="@drawable/ic_add"
-            fab:fab_size="mini"
-            fab:fab_label="Despesas" />
+            app:fab_colorNormal="@color/coloPrimaryDespesas"
+            fab:fab_label="Despesas"
+            fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_receita"

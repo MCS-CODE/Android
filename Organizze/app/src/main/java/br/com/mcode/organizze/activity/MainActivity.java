@@ -10,10 +10,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 
-import br.com.mcode.organizze.PrincipalActivity;
 import br.com.mcode.organizze.R;
-import br.com.mcode.organizze.activity.CadastroActivity;
-import br.com.mcode.organizze.activity.LoginActivity;
 import br.com.mcode.organizze.config.ConfigFirebase;
 
 public class MainActivity extends IntroActivity {
