@@ -7,7 +7,7 @@
         <entry key="app/src/main/res/drawable/ic_lock.xml" value="0.111" />
         <entry key="app/src/main/res/drawable/ic_person.xml" value="0.111" />
         <entry key="app/src/main/res/layout/activity_cadastro.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_despesas.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/activity_despesas.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_principal.xml" value="0.1" />

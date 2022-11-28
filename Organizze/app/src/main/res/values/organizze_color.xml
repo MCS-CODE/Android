@@ -7,10 +7,10 @@
     <!-- Color despesas! -->
     <color name="coloPrimaryDespesas">#C62828</color>
     <color name="coloPrimaryDarkDespesas">#D84315</color>
-    <color name="colorAccentDespesas">#F9A825</color>
+    <color name="colorAccentDespesas">#F34747</color>
 
     <!-- Color Receitas! -->
-    <color name="coloPrimaryReceitas">#283593</color>
+    <color name="coloPrimaryReceitas">#268DA6</color>
     <color name="coloPrimaryDarkReceitas">#1565C0</color>
     <color name="colorAccentReceitas">#0277BD</color>
 </resources>
