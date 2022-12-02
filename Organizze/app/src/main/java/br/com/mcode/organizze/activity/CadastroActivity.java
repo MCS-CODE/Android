@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 import br.com.mcode.organizze.R;
 import br.com.mcode.organizze.config.ConfigFirebase;
+import br.com.mcode.organizze.helper.Base64Custom;
 import br.com.mcode.organizze.model.Usuario;
 
 public class CadastroActivity extends AppCompatActivity {
@@ -76,6 +77,9 @@ public class CadastroActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    String idUsuario = Base64Custom.codificarBase64(usuario.getEmail());
+                    usuario.setIdUsuario(idUsuario);
+                    usuario.salvar();
                     finish();
                 }else {
                     String excecao = "";
