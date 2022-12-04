@@ -9,4 +9,9 @@ public class DateCustom {
         String dataString = simpleDateFormat.format(data);
         return dataString;
     }
+
+    public static String mesAnoDespesa(String data){
+        String retornoData[] = data.split("/");
+        return retornoData[1] + retornoData[2];
+    }
 }
