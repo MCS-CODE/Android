@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -34,16 +35,47 @@ public class DespesasActivity extends AppCompatActivity {
     }
 
     public void salvarDespesas(View view){
-        movimentacao = new Movimentacao();
-        movimentacao.setValor(Double.parseDouble(campoValor.getText().toString()));
-        movimentacao.setCategoria(campoCategoria.getText().toString());
-        movimentacao.setData(campoData.getText().toString());
-        movimentacao.setDescricao(campoDescricao.getText().toString());
-        movimentacao.setTipo("d");
-        String mesAno = campoData.getText().toString();
 
-        movimentacao.salvar(mesAno);
+        if(validarCampoDespesa()) {
+            movimentacao = new Movimentacao();
+            movimentacao.setValor(Double.parseDouble(campoValor.getText().toString()));
+            movimentacao.setCategoria(campoCategoria.getText().toString());
+            movimentacao.setData(campoData.getText().toString());
+            movimentacao.setDescricao(campoDescricao.getText().toString());
+            movimentacao.setTipo("d");
+            String mesAno = campoData.getText().toString();
+
+            movimentacao.salvar(mesAno);
+        }
     }
 
+    public boolean validarCampoDespesa(){
+        String textData = campoData.getText().toString();
+        String textCategoria = campoCategoria.getText().toString();
+        String textDescricao = campoDescricao.getText().toString();
+        String textValor = campoValor.getText().toString();
+
+        if ( !textData.isEmpty()){
+            if ( !textCategoria.isEmpty()){
+                if ( !textDescricao.isEmpty()){
+                    if ( !textValor.isEmpty()){
+                        return true;
+                    }else {
+                        Toast.makeText(DespesasActivity.this, "Campo Valor não preenchido!", Toast.LENGTH_SHORT).show();
+                        return false;
+                    }
+                }else {
+                    Toast.makeText(DespesasActivity.this, "Campo Descrição não preenchido!", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            }else {
+                Toast.makeText(DespesasActivity.this, "Campo Categoria não preenchido!", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }else {
+            Toast.makeText(DespesasActivity.this, "Campo data não preenchido!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
 
 }
