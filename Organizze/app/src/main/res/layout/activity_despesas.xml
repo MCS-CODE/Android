@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/edit_valor"
+            android:id="@+id/edite_valor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -46,7 +46,7 @@
         app:layout_constraintVertical_chainStyle="packed">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_data"
+            android:id="@+id/edite_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="ex: 27/11/2022" />
@@ -66,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_categoria"
+            android:id="@+id/edite_categoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="ex: salario" />
@@ -91,7 +91,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnFabSalvar"
+        android:id="@+id/btn_fab_salvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"

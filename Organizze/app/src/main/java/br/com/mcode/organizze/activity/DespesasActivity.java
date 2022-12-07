@@ -37,10 +37,10 @@ public class DespesasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_despesas);
 
-        campoData = findViewById(R.id.edit_data);
-        campoCategoria = findViewById(R.id.edit_categoria);
+        campoData = findViewById(R.id.edite_data);
+        campoCategoria = findViewById(R.id.edite_categoria);
         campoDescricao = findViewById(R.id.edit_descricao);
-        campoValor = findViewById(R.id.edit_valor);
+        campoValor = findViewById(R.id.edite_valor);
 
         //Pegando data atual
         campoData.setText(DateCustom.dataAtual());
