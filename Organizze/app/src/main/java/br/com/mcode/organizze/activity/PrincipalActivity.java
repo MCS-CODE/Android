@@ -2,6 +2,7 @@ package br.com.mcode.organizze.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,6 +40,8 @@ public class PrincipalActivity extends AppCompatActivity {
 
     private FirebaseAuth autenticacao = ConfigFirebase.getFirebadeAutenticacao();
     private DatabaseReference firebaseRef = ConfigFirebase.getFirebaseDatabase();
+    private DatabaseReference usuarioRef;
+    private ValueEventListener valueEventListenerUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +57,13 @@ public class PrincipalActivity extends AppCompatActivity {
         textSaldo = findViewById(R.id.textSaldo);
         textSaudacao = findViewById(R.id.textSaudacao);
         configCalendario();
-        recuperResumo();
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        recuperResumo();
     }
 
     //Menu
@@ -111,8 +119,9 @@ public class PrincipalActivity extends AppCompatActivity {
     public void recuperResumo(){
         String idUserMail = autenticacao.getCurrentUser().getEmail();
         String idusuario = Base64Custom.codificarBase64(idUserMail);
-        DatabaseReference idUserRef = firebaseRef.child("usuarios").child(idusuario);
-        idUserRef.addValueEventListener(new ValueEventListener() {
+        usuarioRef = firebaseRef.child("usuarios").child(idusuario);
+        Log.i("evento", "evento foi adicionado");
+        valueEventListenerUsuario = usuarioRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Usuario usuario = snapshot.getValue(Usuario.class);
@@ -136,4 +145,10 @@ public class PrincipalActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("evento", "evento foi encerrado");
+        usuarioRef.removeEventListener(valueEventListenerUsuario);
+    }
 }
